@@ -79,7 +79,8 @@ def start_route(start):
 def start_end_route(start, end): 
     session = Session(engine)
     if start >= end:
-        return "Error: Invalid date range!<br>Please make sure the <b>end date</b> is later than <b>start date</b>."
+        return "<h2>Error: Invalid date range!</h2>\
+            <br>Please make sure the <b>end date</b> is later than <b>start date</b>."
     else:
         start_date = start[:4] + "-" + start[4:6] + "-" + start[-2:]
         end_date = end[:4] + "-" + end[4:6] + "-" + end[-2:]
