@@ -67,7 +67,8 @@ def station_route():
 @app.route("/api/v1.0/tobs")
 def tobs_route(): 
     session = Session(engine)
-    results_3 = session.query(Measurement.date, Measurement.tobs).filter_by(station = active_station[0]).filter(Measurement.date >= min_date).all()
+    results_3 = session.query(Measurement.date, Measurement.tobs)\
+                .filter_by(station = active_station[0]).filter(Measurement.date >= min_date).all()
     session.close()
     return jsonify(dict(results_3))
 
