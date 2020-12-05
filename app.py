@@ -33,20 +33,20 @@ app = Flask(__name__)
 @app.route("/")
 def main():    
     return (
-        '<h1>Welcome to Hawaii API!</h1><br>\
-        <h2>This API accepts the following functions:</h2><br>\
+        '<h1>Welcome to Hawaii API v1.0</h1><br>\
+        <h2>This API accepts the following functions:</h2>\
         <ul><li><a href="/api/v1.0/precipitation" target="_blank">/api/v1.0/precipitation</a><br>\
         Return a JSON list of precipitation data for the <b>last year</b> in the database.</li><br>\
         <li><a href="/api/v1.0/stations" target="_blank">/api/v1.0/stations</a><br>\
         Return a JSON list of <b>stations</b> in the database.</li><br>\
         <li><a href="/api/v1.0/tobs" target="_blank">/api/v1.0/tobs</a><br>\
-        Return a JSON list of temperature observations (TOBS) of the most active station for the last year.</li><br>\
+        Return a JSON list of <b>temperature observations (TOBS)</b> of the most active station for the last year.</li><br>\
         <li><a href="/api/v1.0/20170101" target="_blank">/api/v1.0/<b>20170101</b></a><br>\
         Return a JSON list of the <b>minimum temperature</b>, the <b>average temperature</b>, and the <b>max temperature</b> for a given start date.<br>\
         Start date must be in <b>YYYYMMDD</b> format.</li><br>\
         <li><a href="/api/v1.0/20170101/20170801" target="_blank">/api/v1.0/<b>20170101</b>/<b>20170801</b></a><br>\
         Return a JSON list of the <b>minimum temperature</b>, the <b>average temperature</b>, and the <b>max temperature</b> for a given start-end range.<br>\
-        Start date must be in <b>YYYYMMDD</b> format.</li><br>'
+        Start/end dates must be in <b>YYYYMMDD</b> format.</li><br>'
     )
 
 @app.route("/api/v1.0/precipitation")
@@ -76,7 +76,7 @@ def start_route(start):
     session = Session(engine)
     start_date = start[:4] + "-" + start[4:6] + "-" + start[-2:]
     results_4 = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
-        filter(Measurement.date >= start_date).all()
+                filter(Measurement.date >= start_date).all()
     session.close()
     return jsonify(
         TMin=results_4[0][0],
@@ -96,7 +96,7 @@ def start_end_route(start, end):
         start_date = start[:4] + "-" + start[4:6] + "-" + start[-2:]
         end_date = end[:4] + "-" + end[4:6] + "-" + end[-2:]
         results_5 = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
-            filter(Measurement.date >= start_date).filter(Measurement.date <= end_date).all()
+                    filter(Measurement.date >= start_date).filter(Measurement.date <= end_date).all()
         session.close()
         return jsonify(
             TMin=results_5[0][0],
