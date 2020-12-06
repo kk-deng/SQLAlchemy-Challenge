@@ -8,7 +8,7 @@ To plan for a long holiday vacation in Honolulu, Hawaii, this project will do so
 
 ## File Index
 
-Five files are attached:
+Following files are attached:
 
 1. <a href="https://github.com/kk-deng/SQLAlchemy-Challenge/blob/main/climate_starter.ipynb">climate_starter.ipynb</a>: Main notebook with bonus resolution.
 
