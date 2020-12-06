@@ -44,10 +44,12 @@ def main():
         <li><a href="/api/v1.0/tobs" target="_blank">/api/v1.0/tobs</a><br>\
         Return a JSON list of <b>temperature observations (TOBS)</b> of the most active station for the last year.</li><br>\
         <li><a href="/api/v1.0/20170101" target="_blank">/api/v1.0/<b>20170101</b></a><br>\
-        Return a JSON list of the <b>minimum temperature</b>, the <b>average temperature</b>, and the <b>max temperature</b> for a given start date.<br>\
+        Return a JSON list of the <b>minimum temperature</b>, the <b>average temperature</b>\
+        , and the <b>max temperature</b> for a given start date.<br>\
         Start date must be in <b>YYYYMMDD</b> format.</li><br>\
         <li><a href="/api/v1.0/20170101/20170801" target="_blank">/api/v1.0/<b>20170101</b>/<b>20170801</b></a><br>\
-        Return a JSON list of the <b>minimum temperature</b>, the <b>average temperature</b>, and the <b>max temperature</b> for a given start-end range.<br>\
+        Return a JSON list of the <b>minimum temperature</b>, the <b>average temperature</b>\
+        , and the <b>max temperature</b> for a given start-end range.<br>\
         Start/end dates must be in <b>YYYYMMDD</b> format. And end date is <b>later</b> than start date.</li>'
     )
 
