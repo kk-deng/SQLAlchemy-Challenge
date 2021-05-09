@@ -1,6 +1,8 @@
-# SQLAlchemy-Challenge
+# Hawaii Weather Data Analysis with Flask API
 
 # Surfs Up! with Hawaii API v1.0
+
+<img src="https://content.tripster.com/travelguide/wp-content/uploads/2017/09/Dropbox_abigail-lynn-316133-750x450.jpg">
 
 ## Background
 
